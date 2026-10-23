@@ -374,6 +374,11 @@ details.card.guidelines > summary.gsum::-webkit-details-marker { display: none; 
 .gsum-h svg { transition: transform .15s; color: var(--ink-2); flex: none; }
 details.card.guidelines[open] > summary .gsum-h svg { transform: rotate(90deg); }
 details.card.guidelines > summary .rec-sum { margin: 0; }
+/* for/against counts on the same line as the heading, centred on it, so the collapsed guideline card is the same height as the Annotated summary card (Adam, 23 Oct 2026) */
+details.card.guidelines > summary.gsum { flex-wrap: nowrap; align-items: center; }
+details.card.guidelines > summary .rec-sum { white-space: nowrap; line-height: 1.2; }
+/* phones: cards are stacked, so the counts may drop to a second line rather than overflow */
+@media (max-width: 640px) { details.card.guidelines > summary.gsum { flex-wrap: wrap; } }
 .gbody { margin-top: 12px; }
 table.rt.gtable { min-width: 0; width: 100%; font-size: .88rem; }
 .rt.gtable td { vertical-align: middle; padding: 8px 6px; }
